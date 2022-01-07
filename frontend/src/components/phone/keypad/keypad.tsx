@@ -1,15 +1,19 @@
 import React from "react";
 import _ from "lodash";
-import { StyledKey, StyledKeypad } from "./styled";
+import { StyledButton, StyledButtonsWrapper, StyledKey, StyledKeypad, StyledKeysWrapper } from "./styled";
 import { Key } from "./types";
 import { KEYS } from "./constants";
 
 
-type Props = {}
+type Props = {
+  addDigit: (newDigit: string) => void;
+  deleteDigit: () => void;
+  clearDisplay: () => void;
+}
 
-const displayKey = (key: Key) => {
+const displayKey = (key: Key, addDigit: (newDigit: string) => void) => {
   return (
-    <StyledKey>
+    <StyledKey onClick={(e) => { addDigit(key.digit) }}>
       <div>
         {key.digit}
       </div>
@@ -20,10 +24,16 @@ const displayKey = (key: Key) => {
   )
 }
 
-export const Keypad: React.FC<Props> = () => {
+export const Keypad: React.FC<Props> = (props) => {
   return (
   <StyledKeypad>
-    {_.map(KEYS, (key) => displayKey(key))}
+    <StyledKeysWrapper>
+      {_.map(KEYS, (key) => displayKey(key, props.addDigit))}
+    </StyledKeysWrapper>
+    <StyledButtonsWrapper>
+      <StyledButton onClick={(e) => { props.deleteDigit(); }}>Delete</StyledButton>
+      <StyledButton onClick={(e) => { props.clearDisplay(); }}>Clear</StyledButton>
+    </StyledButtonsWrapper>
   </StyledKeypad>
   )
 }

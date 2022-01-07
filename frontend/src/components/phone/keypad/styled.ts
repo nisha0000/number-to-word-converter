@@ -27,10 +27,35 @@ export const StyledKey = styled.div`
   }
 `;
 
-export const StyledKeypad = styled.div`
+export const StyledKeysWrapper = styled.div`
   width: 25em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background-color: darkblue;
+`;
+
+export const StyledKeypad = styled.div`
+  width: 25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: darkblue;
+`;
+
+export const StyledButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5em;
+`;
+
+export const StyledButton = styled.button`
+  display: flex;
+  font-weight: 600;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid red;
+  background-color: grey;
+  color: darkblue;
+  padding: 0.5em 1em;
 `;
