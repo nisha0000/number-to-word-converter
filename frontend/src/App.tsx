@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
+import { Provider } from "react-redux";
+import { configureStore } from './features/store';
+import { StandardPage } from './features/page';
 
-function App() {
+const { store } = configureStore();
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-      <div>hello!</div>
-      </header>
-    </div>
+    // <Provider store={store}>
+      <StandardPage />
+    // </Provider>
   );
 }
 
