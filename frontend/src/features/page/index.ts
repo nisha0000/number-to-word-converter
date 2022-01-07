@@ -1,0 +1,1 @@
+export { StandardPage } from "./page";
