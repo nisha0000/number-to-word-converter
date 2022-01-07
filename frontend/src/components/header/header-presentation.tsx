@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledHeader = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 600;
   padding: 0.5em 0;
   align-items: center;

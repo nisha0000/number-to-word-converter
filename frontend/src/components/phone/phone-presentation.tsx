@@ -12,7 +12,7 @@ const StyledWrapper = styled.div`
 
 const StyledNumberDisplay = styled.div`
   display: flex;
-  height: 3em;
+  height: 2em;
   width: 15em;
   border: 1px solid red;
   border-radius: 5px;
@@ -21,13 +21,30 @@ const StyledNumberDisplay = styled.div`
   justify-content: center;
   font-size: 1.5em;
   font-weight: 600;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   padding: 0.25em; 
 `;
 
 
-const StyledResults = styled.div``;
+const StyledResults = styled.div`
+  display: flex;
+  width: 70%;
+  border: 1px solid red;
+  height: 10em;
+  overflow-y: auto;
+  border-radius: 5px;
+  padding: 1em;
+`;
+
+export const StyledConvertButton = styled.button`
+  display: flex;
+  margin: 1em 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 export const PhonePresentation: React.FC = () => {
   const [numbersToConvert, setNumbersToConvert] = useState<string>("");
@@ -56,6 +73,7 @@ export const PhonePresentation: React.FC = () => {
       clearDisplay={clearNumbers}
       addDigit={setNumbers}
     />
-    <StyledResults>results</StyledResults>
+    <StyledConvertButton>Convert!</StyledConvertButton>
+    <StyledResults>results placeholder</StyledResults>
   </StyledWrapper>)
 }
