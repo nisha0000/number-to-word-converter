@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 const StyledHeader = styled.div`
   display: flex;
-  flex: 1 0 auto;
   flex-direction: column;
-  height: 100px;
   font-size: 3em;
   font-weight: 600;
   padding: 0.5em 0;
