@@ -8,9 +8,9 @@ const { store } = configureStore();
 
 const App: React.FC = () => {
   return (
-    // <Provider store={store}>
+    <Provider store={store}>
       <StandardPage />
-    // </Provider>
+   </Provider>
   );
 }
 

@@ -33,8 +33,8 @@ module.exports = {
         return options;
     },
     
-    getSuggestions: (numberToConvert) => {
-        const digits = numberToConvert.toString().split();
+    getPossibleWords: (numberToConvert) => {
+        const digits = _.split(numberToConvert, "");
     
         const letterOptions = module.exports.convertNumberToWords(digits);
     

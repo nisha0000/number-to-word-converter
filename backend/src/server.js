@@ -8,12 +8,11 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.post("/api/convert", (req, res) => {
-    const { numbers } = req.body;
+app.get("/api/convert/:numbers", (req, res) => {
+    const numbers = req.params.numbers;
     const possibleWords = getPossibleWords(numbers);
 
     // TODO: check words are valid
-
     res.status(200).json({ possibleWords });
   });
 

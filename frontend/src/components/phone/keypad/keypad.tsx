@@ -11,9 +11,9 @@ type Props = {
   clearDisplay: () => void;
 }
 
-const displayKey = (key: Key, addDigit: (newDigit: string) => void) => {
+const displayKey = (key: Key, index: number, addDigit: (newDigit: string) => void) => {
   return (
-    <StyledKey onClick={(e) => { addDigit(key.digit) }}>
+    <StyledKey key={`${key.digit}_${index}`} onClick={(e) => { addDigit(key.digit) }}>
       <div>
         {key.digit}
       </div>
@@ -28,7 +28,7 @@ export const Keypad: React.FC<Props> = (props) => {
   return (
   <StyledKeypad>
     <StyledKeysWrapper>
-      {_.map(KEYS, (key) => displayKey(key, props.addDigit))}
+      {_.map(KEYS, (key, index) => displayKey(key, index, props.addDigit))}
     </StyledKeysWrapper>
     <StyledButtonsWrapper>
       <StyledButton onClick={(e) => { props.deleteDigit(); }}>Delete</StyledButton>

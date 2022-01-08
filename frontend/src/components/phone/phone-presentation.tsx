@@ -1,3 +1,4 @@
+import _ from "lodash";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Keypad } from "./keypad/keypad";
@@ -46,7 +47,16 @@ export const StyledConvertButton = styled.button`
   }
 `;
 
-export const PhonePresentation: React.FC = () => {
+type Props = {
+  stringOptions: string[];
+  onConvert: (newValue: string) => void;
+}
+
+const formatStringOptions = (options: string[]) => {
+  return _.join(options, ", ");
+}
+
+export const PhonePresentation: React.FC<Props> = (props) => {
   const [numbersToConvert, setNumbersToConvert] = useState<string>("");
 
   const setNumbers = (newDigit: string) => {
@@ -73,7 +83,7 @@ export const PhonePresentation: React.FC = () => {
       clearDisplay={clearNumbers}
       addDigit={setNumbers}
     />
-    <StyledConvertButton>Convert!</StyledConvertButton>
-    <StyledResults>results placeholder</StyledResults>
+    <StyledConvertButton onClick={(e) => { props.onConvert(numbersToConvert); }}>Convert!</StyledConvertButton>
+    <StyledResults>{formatStringOptions(props.stringOptions)}</StyledResults>
   </StyledWrapper>)
 }
