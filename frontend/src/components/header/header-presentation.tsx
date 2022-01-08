@@ -10,11 +10,15 @@ const StyledHeader = styled.div`
   align-items: center;
 `;
 
-export const HeaderPresentation: React.FC = () => {
+type Props = {
+  text: string;
+}
+
+export const HeaderPresentation: React.FC<Props> = (props) => {
 
   return (
   <StyledHeader>
-    PhoneWords Predictive Text
+    {props.text}
   </StyledHeader>
   )
 }
