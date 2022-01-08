@@ -6,7 +6,7 @@ import { Phone } from "../phone";
 export const StandardPage: React.FC = () => {
   return ( 
   <PagePresentation>
-     <HeaderPresentation/>
+     <HeaderPresentation text={"PhoneWords Predictive Text"}/>
      <Phone/>
   </PagePresentation>
   ) 
