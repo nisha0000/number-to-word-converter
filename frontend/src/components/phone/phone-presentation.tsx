@@ -46,7 +46,12 @@ export const StyledConvertButton = styled.button`
   }
 `;
 
-export const PhonePresentation: React.FC = () => {
+type Props = {
+  stringOptions: string[];
+  onConvert: (newValue: string) => void;
+}
+
+export const PhonePresentation: React.FC<Props> = (props) => {
   const [numbersToConvert, setNumbersToConvert] = useState<string>("");
 
   const setNumbers = (newDigit: string) => {
@@ -73,7 +78,7 @@ export const PhonePresentation: React.FC = () => {
       clearDisplay={clearNumbers}
       addDigit={setNumbers}
     />
-    <StyledConvertButton>Convert!</StyledConvertButton>
+    <StyledConvertButton onClick={(e) => { props.onConvert(numbersToConvert); }}>Convert!</StyledConvertButton>
     <StyledResults>results placeholder</StyledResults>
   </StyledWrapper>)
 }
