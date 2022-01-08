@@ -11,7 +11,7 @@ export const convertNumbersToStringOptions = (numbers: string) => async (dispatc
     console.log("result", result)
     dispatch({
       type: CONVERSION_SUCCESS,
-      payload: { stringOptions: result.data.possibleOptions }
+      payload: { stringOptions: result.data.possibleWords }
     })
   }
   catch {

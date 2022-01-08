@@ -2,7 +2,6 @@ import {
   applyMiddleware, createStore, compose,
 } from "redux";
 import thunkMiddleware from "redux-thunk";
-// import {  } from "connected-react-router";
 import { combinedRootReducer } from "./root-reducer";
 
 

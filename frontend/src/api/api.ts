@@ -2,14 +2,14 @@ import axios, { AxiosResponse } from "axios";
 
 
 
-export const post = async (url: string, payload: unknown): Promise<AxiosResponse<any>> => {
-  return axios.post(url, payload);
+export const get = async (url: string): Promise<AxiosResponse<any>> => {
+  return axios.get(url);
 };
 
 
 export const convertNumbersToString = (
   numbersToConvert: string,
 ) => {
-  return post(`/api/convert`, numbersToConvert)
+  return get(`/api/convert/${numbersToConvert}`)
 
 }
