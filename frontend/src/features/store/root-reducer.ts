@@ -1,20 +1,11 @@
 
 import { combineReducers } from "redux";
 import { RootReducerType } from "./types";
-// import { reducerName as mainSearchReducerName, reducer as mainSearchReducer } from "../character-display"
-// import { reducerName as singleCharacterReducerName, reducer as singleCharacterReducer } from "../single-character-page"
-// import { reducerName as paginationReducerName, reducer as paginationReducer } from "../pagination"
-
-const reducer = (state: string, action: {type: "red"}): string => {
-  return "hello"
-}
-
+import { reducerName as conversionReducerName, reducer as conversionReducer } from "../phone"
 
 export const getRootReducer = () => {
   return {
-    one: reducer,
-    // [paginationReducerName]: paginationReducer,
-    // [singleCharacterReducerName]: singleCharacterReducer,
+    [conversionReducerName]: conversionReducer,
   }
 }
 
